@@ -5,10 +5,10 @@ from collections import deque
 from copy import deepcopy
 
 PROCESSES = [
-    {"pid": "P1", "at": 0, "bt": 8, "priority": 2},
-    {"pid": "P2", "at": 0, "bt": 4, "priority": 1},
-    {"pid": "P3", "at": 0, "bt": 2, "priority": 4},
-    {"pid": "P4", "at": 0, "bt": 6, "priority": 3},
+    {"pid": "P1", "at": 0, "bt": 5, "priority": 3},
+    {"pid": "P2", "at": 0, "bt": 9, "priority": 1},
+    {"pid": "P3", "at": 0, "bt": 3, "priority": 4},
+    {"pid": "P4", "at": 0, "bt": 7, "priority": 2},
 ]
 
 SRTF_PROCESSES = [
