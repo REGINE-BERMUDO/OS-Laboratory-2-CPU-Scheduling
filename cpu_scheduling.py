@@ -24,3 +24,16 @@ def prepare(processes):
         p["remaining"] = p["bt"]
         p["first_start"] = None
     return result
+
+def record_run(p, start, end, gantt):
+    if start == end:
+        return
+    if gantt and gantt[-1][2] == p["pid"] and gantt[-1][1] == start:
+        gantt[-1] = (gantt[-1][0], end, p["pid"])
+    else:
+        gantt.append((start, end, p["pid"]))
+    if p["first_start"] is None:
+        p["first_start"] = start
+    p["remaining"] -= end - start
+    if p["remaining"] == 0:
+        p["ct"] = end
