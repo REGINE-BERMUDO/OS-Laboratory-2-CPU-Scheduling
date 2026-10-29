@@ -17,3 +17,10 @@ SRTF_PROCESSES = [
     {"pid": "P3", "at": 2, "bt": 2, "priority": 4},
     {"pid": "P4", "at": 3, "bt": 1, "priority": 3},
 ]
+
+def prepare(processes):
+    result = deepcopy(processes)
+    for p in result:
+        p["remaining"] = p["bt"]
+        p["first_start"] = None
+    return result
